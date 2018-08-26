@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+
+	{% if session.username == sellername %}
+	
+		<h3>You can't bid for your own product !</h3>
+		<a class="btn btn-danger" href="/viewproduct">Back</a>
+
+  	
+  {% else %}
+    {%if session.username == buyername %}
+        <h3>hello</h3>
+
+      <h3>You have already the highest bidder for this product !</h3>
+      <a class="btn btn-danger" href="/viewproduct">Back</a>
+
+    {% else %}
+
+      
+  		<h3> Thank you showing interest in this product ! </h3>
+  		<table class="table table-striped">
+  			<tr>
+  				<td><strong>You are bidding {{product[1]}}</strong></td>
+		 		<td><img src="/{{product[2]}}" class="img-thumbnail" width="300px" height="300px"></td>
+		  		<td>{{product[4]}}</td>
+		  		<td><a class="btn btn-success" href="/bidproduct/{{product[0]}}">Continue To Bid</a></td>
+		  	</tr>
+  		</table>
+
+    {% endif %}
+ 		
+  {% endif %}
+
+  		
+{% endblock %}

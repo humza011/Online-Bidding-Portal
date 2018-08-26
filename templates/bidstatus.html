@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+
+{% block body%}
+<h1>Current Bidding Transactions as of <small><p id="demo"></p><script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d;
+</script></small></h1>
+<hr>
+ <table class="table table-striped">
+ 	<tr>
+ 		<th>ID</th>
+ 		<th>Buyer Name</th>
+ 		<th>Current Price</th>
+ 		<th>Product Name</th>
+ 	</tr>
+ 	{% for bidres in bidres %}
+ 	<tr>
+ 		<td>{{bidres[0]}}</td>
+ 		<td><strong>{{bidres[1]}}</strong></td>
+ 		<td>{{bidres[2]}}</td>
+  		<td>{{bidres[3]}}</td>
+  	</tr>
+  	{%endfor%}
+  </table>
+  {% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Dashboard <small> Welcome {{session.username}}</small></h1>
+  <hr>
+  <a class="btn btn-success" href="/photo-upload">Add Product</a>
+  <a class="btn btn-primary" href="/viewproduct">View Product</a>
+  <a class="btn btn-danger" href="/bidstatus">Bid Status</a>
+{% endblock %}

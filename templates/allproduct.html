@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block body %}
+  <a class="btn btn-success" href="/photo-upload">Add Product</a>
+  <hr>
+ <table class="table table-striped">
+ 	<tr>
+ 		<th>ID</th>
+ 		<th>Product Name</th>
+ 		<th></th>
+ 		<th>Price</th>
+ 		<th></th>
+ 	</tr>
+ 	{% for product in products %}
+ 	<tr>
+ 		<td>{{product[0]}}</td>
+ 		<td><strong>{{product[1]}}</strong></td>
+ 		<td><img src="{{product[2]}}" class="img-thumbnail" width="100px" height="100px"></td>
+  		<td>{{product[4]}}</td>
+  		<td><a class="btn btn-success" href="/placebid/{{product[0]}}">Place Bid</a></td>
+  	</tr>
+  	{%endfor%}
+  </table>
+{% endblock %}

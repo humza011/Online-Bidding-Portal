@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block body%}
+<table class="table table-striped">
+ 	<tr>
+ 		<th>Product Name</th>
+ 		<th></th>
+ 		<th>Price</th>
+ 	</tr>
+ 	{% for product in products %}
+ 	<tr>
+ 		<td><strong>{{product[1]}}</strong></td>
+ 		<td><img src="{{product[2]}}" class="img-thumbnail" width="100px" height="100px" "/></td>
+  		<td>{{product[4]}}</td>
+  	</tr>
+  	{%endfor%}
+  </table>
+{% endblock %}
